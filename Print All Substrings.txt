@@ -1,0 +1,32 @@
+/*
+For a given input string(str), write a function to print all the possible substrings.
+Substring
+A substring is a contiguous sequence of characters within a string.
+Example: "cod" is a substring of "coding". Whereas, "cdng" is not as the characters taken are not contiguous
+*/
+
+#include<iostream>
+using namespace std;
+
+void printallstring(char input[],int start){
+	for(int i=start;input[i]!='\0';i++){
+		for(int j=start;j<=i;j++){
+			cout<<input[j];
+		}
+		cout<<endl;
+	}
+}
+
+void printsubstring(char input[]){
+	for(int i=0;input[i]!='\0';i++){
+		printallstring(input,i);
+	}
+}
+
+int main(){
+	char ch[100];
+	cout<<"Enter the character to print all their substring"<<endl;
+	cin.getline(ch,100);
+	
+	printsubstring(ch);
+}
